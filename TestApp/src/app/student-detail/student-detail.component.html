@@ -1,0 +1,26 @@
+<div *ngIf="student">
+
+  <h2>{{student.name | uppercase}} Details</h2>
+  <div><span>ID: </span>{{student.id}}</div>
+  <div><span>Name: </span>{{student.name}}</div>
+  <div><span>Gender: </span>{{student.gender}}</div>
+  <div><span>Stream: </span>{{student.stream}}</div>
+ <h3>Edit Details</h3> 
+  <div>
+    <label>Name:
+      <input [(ngModel)]="student.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>Gender:
+      <input [(ngModel)]="student.gender" placeholder="gender"/>
+    </label>
+  </div>
+  <div>
+    <label>Stream:
+      <input [(ngModel)]="student.stream" placeholder="stream"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
