@@ -11,6 +11,8 @@ import { STUDENTS } from './mock-student'
 })
 export class StudentService {
   private studentsUrl = 'api/students';  // URL to web api
+  //private studentsUrl = 'http://localhost:8080/RestExa/student';  // URL to web api
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

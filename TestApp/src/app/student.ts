@@ -3,4 +3,5 @@ export interface Student {
     name:string;
     gender:string;
     stream:string;
+    marks:number;
     }

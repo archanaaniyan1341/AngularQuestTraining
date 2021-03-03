@@ -19,10 +19,12 @@ students:Student[];
     this.studentService.getStudents()
         .subscribe(students => this.students = students);
   }
-  add(name: string): void {
+  add(name: string,gender:string,stream:string): void {
     name = name.trim();
+    gender= gender.trim();
+    stream=stream.trim();
     if (!name) { return; }
-    this.studentService.addStudent({ name } as Student)
+    this.studentService.addStudent({ name, gender, stream} as Student)
       .subscribe(student => {
         this.students.push(student);
       });

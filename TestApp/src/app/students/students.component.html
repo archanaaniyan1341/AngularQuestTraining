@@ -1,14 +1,4 @@
 <h2>Student List</h2>
-<div>
-  <label id="new-student">Student name: </label>
-  <input for="new-student" #studentName />
-
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(studentName.value); studentName.value=''">
-    Add student
-  </button>
-</div>
-
 <ul class="students">
   <li *ngFor="let student of students">
   <a routerLink="/detail/{{student.id}}">
@@ -18,4 +8,20 @@
   (click)="delete(student)">x</button>
   </li>
 </ul>
+<h2>Add Student</h2>
+<div>
+  <label id="new-student">Student name: </label>
+  <input for="new-student" #studentName />
+  <label id="new-student-gender">Gender: </label>
+  <input for="new-student-gender" #studentGender />
+  <label id="new-student-stream">Stream: </label>
+  <input for="new-student-stream" #studentStream />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(studentName.value,studentGender.value,studentStream.value); studentName.value=''; studentGender.value='';studentStream.value=''">
+    Add student
+  </button>
+</div>
+
+
 
