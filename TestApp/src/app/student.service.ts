@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
-
 import { Student } from './student'
 import { STUDENTS } from './mock-student'
 
@@ -10,24 +8,18 @@ import { STUDENTS } from './mock-student'
   providedIn: 'root'
 })
 export class StudentService {
-  private studentsUrl = 'api/students';  // URL to web api
+  private studentsUrl = 'api/students';  
   //private studentsUrl = 'http://localhost:8080/RestExa/student';  // URL to web api
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*' })
   };
 
   constructor(private http:HttpClient) { }
-  
-  /** GET Students from the server */
-getStudents(): Observable<Student[]> {
-  return this.http.get<Student[]>(this.studentsUrl);
-  
-}
+ 
   getStudent(id: number): Observable<Student> {
     return of(STUDENTS.find(student => student.id === id));
-  }
-  
+  }  
   addStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(this.studentsUrl, student, this.httpOptions);
   }
@@ -35,24 +27,28 @@ getStudents(): Observable<Student[]> {
    deleteStudent(student: Student | number): Observable<Student> {
     const id = typeof student === 'number' ? student : student.id;
     const url = `${this.studentsUrl}/${id}`;
-
     return this.http.delete<Student>(url, this.httpOptions);
    }
    /** PUT: update the students on the server */
-  updateStudent(student: Student): Observable<any> {
-    return this.http.put(this.studentsUrl, student, this.httpOptions);
+   updateStudent(student: Student): Observable<any> {
+     return this.http.put(this.studentsUrl, student, this.httpOptions);
+    }
+   getStudents():Observable<Student[]>{
+    const students=of(STUDENTS)
+    return students;
   }
 }
-  /**
-   * // getStudents():Observable<Student[]>{
-  //   const students=of(STUDENTS)
-  //   return students;
-  // }
- * Handle Http operation that failed.
- * Let the app continue.
- * @param operation - name of the operation that failed
- * @param result - optional value to return as the observable result
- */ 
+
+
+
+
+
+
+//  * Handle Http operation that failed.
+//  * Let the app continue.
+//  * @param operation - name of the operation that failed
+//  * @param result - optional value to return as the observable result
+//  */ 
 // private handleError<T>(operation = 'operation', result?: T) {
 //   return (error: any): Observable<T> => {
 
@@ -65,5 +61,14 @@ getStudents(): Observable<Student[]> {
 //     // Let the app keep running by returning an empty result.
 //     return of(result as T);
 //   };
-
-
+// getStudent(id): Observable<any> {
+//   return this.http.get(`${this.studentsUrl}/${id}`);
+// }
+ 
+  /** GET Students from the server */
+// getStudents(): Observable<Student[]> {
+//   return this.http.get<Student[]>(this.studentsUrl)
+// }
+// updateStudent(id, data): Observable<any> {
+  //   return this.http.put(`${this.studentsUrl}/${id}`, data);
+  // }

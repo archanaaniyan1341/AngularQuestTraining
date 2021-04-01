@@ -21,10 +21,10 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientModule,
-   HttpClientInMemoryWebApiModule.forRoot(
-   InMemoryDataService, { dataEncapsulation: false }
-)
+    HttpClientModule
+//    HttpClientInMemoryWebApiModule.forRoot(
+//    InMemoryDataService, { dataEncapsulation: false }
+// )
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

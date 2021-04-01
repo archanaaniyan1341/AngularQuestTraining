@@ -1,0 +1,15 @@
+<p>Emergency Contact</p>
+<table border="1">
+    <tr>
+        <th>EmployeeID</th>
+        <th>EmployeeName</th>
+        <th>Contact</th>
+        <th>Email</th>
+    </tr>
+    <tr *ngFor="let j of emergency">
+        <td>{{j.employeeID}}</td>
+        <td>{{j.employeeName}}</td>
+        <td>{{j.contact}}</td>
+        <td>{{j.email}}</td>
+    </tr>
+</table>

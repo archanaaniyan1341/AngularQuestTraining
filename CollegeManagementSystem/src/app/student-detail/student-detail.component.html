@@ -1,0 +1,9 @@
+<div *ngIf="student">
+    <h2>{{student.name | uppercase}} Details</h2>
+    <div><span>ID: </span>{{student.id}}</div>
+    <div><span>Name: </span>{{student.name}}</div>
+    <div><span>Gender: </span>{{student.gender}}</div>
+    <div><span>Stream: </span>{{student.stream}}</div>
+    <div><span>Marks: </span>{{student.marks}}</div>
+    <button (click)="goBack()">go back</button>
+</div>

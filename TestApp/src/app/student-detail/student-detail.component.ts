@@ -11,11 +11,13 @@ import { Student } from '../student';
 })
 export class StudentDetailComponent implements OnInit {
 @Input() student:Student;
+currentStudent=null;
   constructor(private route: ActivatedRoute,
     private studentService: StudentService,
     private location: Location) { }
 
   ngOnInit(): void {
+    //this.getStudent(this.route.snapshot.paramMap.get('id'));
     this.getStudent();
   }
   getStudent(): void {
@@ -23,6 +25,17 @@ export class StudentDetailComponent implements OnInit {
     this.studentService.getStudent(id)
       .subscribe(student => this.student = student);
   }
+  // getStudent(id): void {
+  //   this.studentService.getStudent(id)
+  //     .subscribe(
+  //       student => {
+  //         this.currentStudent = student;
+  //         console.log(student);
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       });
+  // }
   goBack(): void {
     this.location.back();
   }
@@ -30,4 +43,14 @@ export class StudentDetailComponent implements OnInit {
     this.studentService.updateStudent(this.student)
       .subscribe(() => this.goBack());
   }
+  // save(): void {
+  //   this.studentService.updateStudent(this.currentStudent.id, this.currentStudent)
+  //     .subscribe(
+  //       response => {
+  //         console.log(response);
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       });
+  // }
 }

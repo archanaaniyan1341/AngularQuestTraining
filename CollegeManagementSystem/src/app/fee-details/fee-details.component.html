@@ -1,0 +1,15 @@
+<p>Fee Details</p>
+<table border="1">
+    <tr>
+        <th>PaymentID</th>
+        <th>StudentID</th>
+        <th>PaymentStatus</th>
+        <th>FeeDetails</th>
+    </tr>
+    <tr *ngFor="let l of fee">
+        <td>{{l.paymentID}}</td>
+        <td>{{l.studentID}}</td>
+        <td>{{l.paymentStatus}}</td>
+        <td>{{l.fees}}</td>
+    </tr>
+</table>

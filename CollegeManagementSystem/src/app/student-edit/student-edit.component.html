@@ -1,0 +1,27 @@
+<h2>Edit Student</h2>
+<table>
+    <!-- <tr>
+        <td>ID</td> 
+        <td><input type="text" [(ngModel)]="studentdata.id"></td>
+    </tr>  -->
+    
+    <tr>
+        <td>Name</td> 
+        <td><input type="text" [(ngModel)]="studentdata.name"></td>
+    </tr> 
+    <tr><td>Gender</td> 
+            <td><input type="text" [(ngModel)]="studentdata.gender"></td>
+        </tr> 
+            <tr>
+                <td>Stream</td> 
+                <td><input type="text" [(ngModel)]="studentdata.stream"></td>
+            </tr> 
+                <tr>
+                    <td>Marks</td> 
+                    <td><input type="text" [(ngModel)]="studentdata.marks"></td>
+                </tr> 
+                           
+        <tr>
+        <td><input type="button" value="update" (click)="updatestudentdata()"></td> 
+      </tr>
+</table>

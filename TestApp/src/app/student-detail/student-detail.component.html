@@ -5,7 +5,9 @@
   <div><span>Name: </span>{{student.name}}</div>
   <div><span>Gender: </span>{{student.gender}}</div>
   <div><span>Stream: </span>{{student.stream}}</div>
+  <div><span>Marks: </span>{{student.marks}}</div>
  <h3>Edit Details</h3> 
+ 
   <div>
     <label>Name:
       <input [(ngModel)]="student.name" placeholder="name"/>
@@ -21,6 +23,7 @@
       <input [(ngModel)]="student.stream" placeholder="stream"/>
     </label>
   </div>
+  
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>

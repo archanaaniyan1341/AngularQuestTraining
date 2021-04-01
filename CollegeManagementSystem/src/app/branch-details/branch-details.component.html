@@ -1,0 +1,13 @@
+<h1>Branch Details</h1>
+<table border="1">
+    <tr>
+        <th>BranchID</th>
+        <th>BranchName</th>
+        <th>FeeDetails</th>
+    </tr>
+    <tr *ngFor="let i of branch">
+        <td>{{i.branchID}}</td>
+        <td>{{i.branchName}}</td>
+        <td>{{i.branchFee}}</td>
+    </tr>
+</table>

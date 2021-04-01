@@ -1,0 +1,35 @@
+<table>
+       <h2>ADD STUDENT</h2> 
+    <tr>
+        <td>ID</td>
+        <td><input type="number" [(ngModel)]="obj_s.id"></td>  
+    </tr>  
+    <tr>
+        <td>Name</td>
+        <td>
+           <input type="text" [(ngModel)]="obj_s.name">
+        </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+         <input type="text" [(ngModel)]="obj_s.gender">
+      </td>
+  </tr>
+  <tr>
+    <td>Stream</td>
+    <td>
+       <input type="text" [(ngModel)]="obj_s.stream">
+    </td>
+  </tr>
+  <tr>
+    <td>Marks</td>
+    <td><input type="number" [(ngModel)]="obj_s.marks"></td>  
+  </tr>  
+    <tr>
+        <td>
+            <input type="button" value="Save" (click)="SaveCustomerdata()">
+        </td>
+        
+    </tr>
+  </table>

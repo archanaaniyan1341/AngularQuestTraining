@@ -1,0 +1,24 @@
+<p>StudentDetails</p>
+<table border="2">
+  <tr><th>ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Branch</th>
+    <th>Marks</th>
+    <th>Delete</th>
+    <th>Edit</th>
+    </tr>
+  <tr *ngFor="let k of studentdata">
+      <td>{{k.id}}</td>
+      <td>{{k.name}}</td>
+      <td>{{k.gender}}</td>
+      <td>{{k.stream}}</td>
+      <td>{{k.marks}}</td>
+      <td>
+        <input type="button" value="Delete" (click) ="deletestudentdetails(k.id)">
+    </td>
+    <td>
+      <input type="button" value="Edit" (click) = "loadnewcomponent(k.id)">
+  </td>
+  </tr>
+</table>

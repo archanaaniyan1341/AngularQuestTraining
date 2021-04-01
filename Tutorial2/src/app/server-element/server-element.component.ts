@@ -17,7 +17,8 @@ ngOnChanges(changes:SimpleChange){
   console.log(changes)
 }
   ngOnInit(): void {
-    console.log('ngoninit called')
+    console.log('ngoninit called');
+    //console.log('TextContent: ' +this.header.nativeElement.textContent)
   }
 ngDoCheck(){
   console.log('ngdocheck called')

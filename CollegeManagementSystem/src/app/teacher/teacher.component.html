@@ -1,0 +1,15 @@
+<p>Teacher</p>
+<table border="1">
+    <tr>
+    <th>FacultyID</th>
+    <th>FacultyName</th>
+    <th>Designation</th>
+    <th>BranchID</th>
+</tr>
+<tr *ngFor="let m of teacher">
+<td>{{m.facultyID}}</td>
+<td>{{m.facultyName}}</td>
+<td>{{m.designation}}</td>
+<td>{{m.branchID}}</td>
+</tr>
+</table>
